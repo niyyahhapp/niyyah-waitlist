@@ -304,6 +304,51 @@
       line-height: 1.55;
     }
 
+    .support {
+      display: grid;
+      gap: 18px;
+      padding: 28px;
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.56), rgba(255,255,255,.36)),
+        radial-gradient(circle at 86% 14%, rgba(115,123,94,.14), transparent 30%);
+      border: 1px solid rgba(255,255,255,.74);
+      box-shadow: 0 26px 64px rgba(63,48,44,.10);
+      backdrop-filter: blur(18px);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .support-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: var(--cocoa);
+      text-decoration: none;
+      font-weight: 850;
+      background: rgba(255,255,255,.58);
+      border: 1px solid rgba(255,255,255,.78);
+      box-shadow: 0 12px 28px rgba(63,48,44,.08);
+    }
+
+    .support-link.primary-support {
+      color: white;
+      background: linear-gradient(135deg, #d98996, #f3b291);
+      box-shadow: 0 16px 34px rgba(185,107,117,.20);
+    }
+
+    .support-note {
+      color: rgba(122,88,80,.72);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
     .early {
       text-align: center;
       padding: 34px 22px;
@@ -339,6 +384,11 @@
       .page { padding-inline: 28px; }
       .hero { grid-template-columns: 1.02fr .82fr; padding-top: 54px; }
       .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      .support { padding: 22px; }
+      .support-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -403,9 +453,27 @@
       <a class="primary" href="#waitlist">Join the Waitlist</a>
     </section>
 
+    <section class="support" aria-labelledby="support-title">
+      <div>
+        <p class="eyebrow">Support NIYYAH</p>
+        <h2 id="support-title">Help keep Qur'an understanding accessible.</h2>
+        <p class="section-sub">Contributions are optional and help us continue building calm, beginner-friendly tools for understanding, reflection, and learning.</p>
+      </div>
+      <div class="support-grid" aria-label="Support options">
+        <a class="support-link" href="#" aria-disabled="true">Support $3</a>
+        <a class="support-link" href="#" aria-disabled="true">Support $5</a>
+        <a class="support-link" href="#" aria-disabled="true">Support $10</a>
+        <a class="support-link" href="#" aria-disabled="true">Support $25</a>
+        <a class="support-link" href="#" aria-disabled="true">Support $50</a>
+        <a class="support-link primary-support" href="#" aria-disabled="true">Custom</a>
+      </div>
+      <p class="support-note">Stripe payment links will be added here once they are created. No pressure, no guilt, and the core NIYYAH learning experience stays free.</p>
+    </section>
+
     <footer>
       <strong>NIYYAH</strong>
       <span>Understand the Qur'an one ayah at a time.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></span>
     </footer>
   </main>
 </body>
